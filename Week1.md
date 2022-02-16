@@ -25,18 +25,13 @@ public static void main(String[] args) {
 	
 	public static String actualMemorySize(String ms) {
 	
-		// Changing the String to a float and removing the GB from the string
 		float memory = Float.parseFloat(ms.substring(0, ms.length() - 2));
 		
-		// If the String contains GB then it will take the 7% memory loss 
-		// and if the memory is under 1GB it will return MB instead of GB
 		if(ms.substring(ms.length() - 2).equals("GB")) {
 			
-			// formatting the floating point of the decimal
 			return memory > 1.075 ?  String.format("%.2f", memory * 0.93) + "GB" :
 				Math.round(memory * 0.93 * 1000) + "MB";
 		} 
-		// if the memory is already a MB, it will just round to the nearest whole number for MB
 		else {
 			return Math.round(memory * 0.93) + "MB";
 		}
@@ -67,7 +62,6 @@ JavaScript Code Challenge:
 ```
 const getHashTags = (string) => {
 
-    //splitting the string by the spaces
     let stringArr = string.toLowerCase().split(" ");
 
     let words = [];
